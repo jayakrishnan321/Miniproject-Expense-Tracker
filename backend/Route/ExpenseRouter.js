@@ -3,10 +3,10 @@ const router = express.Router();
 const authMiddleware = require("../Middleware/authmiddleware");
 
 const {
-  addExpense,
-  getExpenses,
-  deleteExpense,
-  updateExpense,
+    addExpense,
+    getExpenses,
+    deleteExpense,
+    updateExpense,
 
 
 } = require("../controllers/expensecontroller");
