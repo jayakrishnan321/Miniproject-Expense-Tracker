@@ -11,7 +11,7 @@ function Home() {
     });
     const [userName, setUserName] = useState("");
     const [expenses, setExpenses] = useState([]);
-    const token = localStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
     const [filters, setFilters] = useState({
         type: 'all',
         month: 'all',
