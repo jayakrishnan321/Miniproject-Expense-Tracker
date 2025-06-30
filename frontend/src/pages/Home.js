@@ -80,7 +80,7 @@ function Home() {
         navigate(`/edit/${id}`)
     }
     const handleLogout = () => {
-        localStorage.removeItem('token'); // ❌ Clear token
+        sessionStorage.clear()
         navigate('/login'); // 🔁 Redirect to login page
     };
     const filteredExpenses = expenses.filter((exp) => {
