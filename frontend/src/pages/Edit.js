@@ -5,7 +5,8 @@ import axios from "axios";
 function Edit() {
     const { id } = useParams(); // get id from URL
     const navigate = useNavigate();
-    const token = localStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
+
 
     const [form, setForm] = useState({
         title: "",
