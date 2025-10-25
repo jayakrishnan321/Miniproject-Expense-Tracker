@@ -10,6 +10,7 @@ app.use(express.json())
 
 app.use("/api/users", require("./Route/UserRouter")); // Auth routes
 app.use("/api/expenses", require("./Route/ExpenseRouter"));
+app.use("/api/ai", require("./Route/AiRouter"));
 
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {

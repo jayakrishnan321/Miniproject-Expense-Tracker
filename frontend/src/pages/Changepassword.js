@@ -1,7 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import api from "../api";
 function ChangePassword() {
     const [oldPassword, setOldPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
@@ -18,8 +17,8 @@ function ChangePassword() {
         }
 
         try {
-            await axios.put(
-                "http://localhost:5000/api/users/change-password",
+            await api.put(
+                "/users/change-password",
                 { oldPassword, newPassword },
                 { headers: { Authorization: token } }
             );

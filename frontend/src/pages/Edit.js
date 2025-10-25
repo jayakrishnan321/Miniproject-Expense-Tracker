@@ -1,7 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
-
+import api from "../api";
 function Edit() {
     const { id } = useParams(); // get id from URL
     const navigate = useNavigate();
@@ -17,7 +16,7 @@ function Edit() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get("http://localhost:5000/api/expenses", {
+            const res = await api.get("/expenses", {
                 headers: { Authorization: token },
             });
             const expense = res.data.find((e) => e._id === id);
@@ -39,7 +38,7 @@ function Edit() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.put(`http://localhost:5000/api/expenses/${id}`, form, {
+        await api.put(`/expenses/${id}`, form, {
             headers: { Authorization: token },
         });
         navigate("/home");
